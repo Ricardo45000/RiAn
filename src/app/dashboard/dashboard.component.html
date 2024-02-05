@@ -1,0 +1,182 @@
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card card-stats">
+        <div class="card-body star-clickable" onclick="window.location.href='#/advanced'">
+          <div class="row">
+            <div class="col-6 col-md-6">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-balance-scale text-warning"></i>
+              </div>
+            </div>
+            <div class="col-6 col-md-6  d-flex align-items-center justify-content-center mx-auto ">
+              <div class="numbers text-center mx-auto">
+                <p class="card-category">{{"Average" | translate}}</p>
+                <p class="card-title">{{this.calculateAverageStars()}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-stats">
+        <div class="card-body star-clickable" (click)="filterCategory(this.categoryToImprove())">
+          <div class="row">
+            <div class="col-6 col-md-6">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-glasses text-warning"></i>
+              </div>
+            </div>
+            <div class="col-6 col-md-6 d-flex align-items-center justify-content-center mx-auto ">
+              <div class="numbers text-center mx-auto">
+                <p class="card-category">{{"Improvement" | translate}}</p>
+                <p class="card-title">{{this.categoryToImprove()}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card card-stats">
+            <div class="card-body star-clickable"(click)="filterRating(5)">
+              <div class="row">
+                <div class="col-8 col-md-8" style="font-size: 35%;">
+                  <div class="icon-big text-center icon-warning">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                </div>
+                <div class="col-4 col-md-4  d-flex align-items-center justify-content-center mx-auto">
+                  <div class="numbers text-center mx-auto">
+                    <!--<p class="card-category">5 stars</p>-->
+                    <p class="card-title">{{this.counterStarsRating(5)}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-stats">
+            <div class="card-body star-clickable" (click)="filterRating(4)">
+              <div class="row">
+                <div class="col-8 col-md-8" style="font-size: 35%;">
+                  <div class="icon-big text-center icon-warning">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                </div>
+                <div class="col-4 col-md-4  d-flex align-items-center justify-content-center mx-auto">
+                  <div class="numbers text-center mx-auto">
+                    <!--<p class="card-category">4 stars</p>-->
+                    <p class="card-title">{{this.counterStarsRating(4)}}</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card card-stats">
+            <div class="card-body star-clickable"  (click)="filterRating(3)">
+              <div class="row">
+                <div class="col-8 col-md-8" style="font-size: 35%;">
+                  <div class="icon-big text-center icon-warning">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                </div>
+                <div class="col-4 col-md-4  d-flex align-items-center justify-content-center mx-auto">
+                  <div class="numbers text-center mx-auto">
+                    <!--<p class="card-category">3 stars</p>-->
+                    <p class="card-title">{{this.counterStarsRating(3)}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card card-stats">
+            <div class="card-body star-clickable" (click)="filterRating(2)">
+              <div class="row">
+                <div class="col-8 col-md-8" style="font-size: 35%;">
+                  <div class="icon-big text-center icon-warning">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                </div>
+                <div class="col-4 col-md-4  d-flex align-items-center justify-content-center mx-auto">
+                  <div class="numbers text-center mx-auto">
+                    <!--<p class="card-category"> 2 stars</p>-->
+                    <p class="card-title">{{this.counterStarsRating(2)}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card card-stats">
+            <div class="card-body star-clickable" (click)="filterRating(1)">
+              <div class="row">
+                <div class="col-8 col-md-8" style="font-size: 35%;">
+                  <div class="icon-big text-center icon-warning">
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                </div>
+                <div class="col-4 col-md-4  d-flex align-items-center justify-content-center mx-auto">
+                  <div class="numbers text-center mx-auto">
+                    <!--<p class="card-category">1 star</p>-->
+                    <p class="card-title">{{this.counterStarsRating(1)}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-7">
+              <div class="numbers pull-left">
+                {{this.numberOfComments()}}
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="pull-right">
+                <span class="badge badge-pill badge-success star-clickable" onclick="window.location.href='#/advanced'">
+                  {{"Comparison" | translate}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="big-title">{{"TotalReviewDashboard" | translate}} {{this.currentYear()}}</h6>
+          <canvas id="activeUsers"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true, 
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5", // or your desired target
+    "module": "esnext", // this enables dynamic imports¸
+    "types": ["node"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+  },
+  "include": ["src/**/*.ts", ".env", "src/environments/set-env.ts"]
+}

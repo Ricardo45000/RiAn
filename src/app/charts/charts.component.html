@@ -1,0 +1,90 @@
+<div class="main-content">
+  <div class="row">
+    <!-- Just 2 bars of comparisons -->
+    <div class="col-md-4">
+      <div id="dateRangePicker">
+        <label style="padding: 10px;" for="unit">{{"Unit" | translate}}: </label>
+        <select name="Unit" id="unit" style="width: 40%;" (change)="realUpdate()">
+          <option value="day">{{"Day" | translate}}</option>
+          <option selected="selected" value="week">{{"Week" | translate}}</option>
+          <option value="month">{{"Month" | translate}}</option>
+          <option value="year">{{"Year" | translate}}</option>
+        </select>
+      </div>
+    </div> 
+    <div class="col-md-4">
+      <div id="dateRangePicker">
+        <label style="padding: 10px;" for="startDate1">{{"From" | translate}}: </label>
+        <input style="width: 30%;" type="date" id="startDate1" [value]="this.now1.toISOString().split('T')[0]" (change)="realUpdate()">
+        <label style="padding: 10px;" for="endDate1"> {{"to" | translate}} </label>
+        <input style="width: 30%;" type="date" id="endDate1" [value]="this.now2.toISOString().split('T')[0]" (change)="realUpdate()">
+      </div>
+    </div> 
+    <div class="col-md-4">  
+        
+        <label style="padding: 10px;" for="startDate2">{{"From" | translate}}: </label>
+        <input style="width: 30%;" type="date" id="startDate2" [value]="this.now3.toISOString().split('T')[0]" (change)="realUpdate()">
+        <label style="padding: 10px;" for="endDate2"> {{"to" | translate}} </label>
+        <input style="width: 30%;" type="date" id="endDate2" [value]="this.now4.toISOString().split('T')[0]" (change)="realUpdate()">
+      
+    </div>
+    
+    
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title text-center">{{"ComparisonTable" | translate}} </h5>
+        </div>
+        <div class="card-body ">
+          <canvas id=chartLine></canvas>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card car-chart">
+        <div class="card-header">
+          <h5 class="card-title text-center">{{"GapDifference" | translate}} </h5>
+        </div>
+        <div class="card-body">
+          <canvas id=activity></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-pricing">
+        <div class="card-header">
+          <h5 class="card-title text-center">{{"NumericalComparative" | translate}} </h5>
+        </div>
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-sm-12">
+              <h2 class="card-title"> {{ absoluteNumber }}</h2>
+            </div>
+            <div class="col-sm-12">
+              <a class="btn btn-round btn-lg" [ngClass]="{ 'btn-primary': isPositive, 'btn-danger': isNegative }" href="javascript:void(0)">
+                {{ isPositive ? '+' : '' }}{{ percentage }}%
+              </a>
+            </div>
+            <div class="col-sm-12">
+              <div class="card-icon" [ngClass]="{ 'icon-positive': isPositive, 'icon-negative': isNegative }"  style="transform: scale(0.5);">
+                <i class="nc-icon nc-minimal-up text-success" *ngIf="isPositive; else negativeIcon" ></i>
+                <ng-template #negativeIcon>
+                  <i class="nc-icon nc-minimal-down text-danger"></i>
+                </ng-template>
+              </div>
+            </div>
+            
+          </div>
+          
+  
+        </div>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</div>

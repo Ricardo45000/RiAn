@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+.positive-percentage {
+  color: green;
+  background-color: lightgreen;
+}
+
+.negative-percentage {
+  color: red;
+  background-color: lightcoral;
+}
+
+
