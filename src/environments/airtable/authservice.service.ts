@@ -139,11 +139,7 @@ export class AuthserviceService {
     this.myLogo = localStorage.getItem('myLogo');
   }
   
-  /**private hashPassword(password: string): string {
-    const saltRounds = 10; // You can adjust the number of salt rounds based on your security requirements
-    const salt = bcrypt.genSaltSync(saltRounds);
-    return bcrypt.hashSync(password, salt);
-  }**/
+  
 
   // Function to verify the entered password against the stored hash
   private verifyPassword(enteredPassword: string, storedHashedPassword: string): boolean {
